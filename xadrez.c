@@ -20,14 +20,14 @@ int main() {
     }
 
     // Implementação de Movimentação da Torre (Direita)
-    printf("##Torre##\n");
+    printf("\n##Torre##\n");
     // Simulando 4 casas;    
         for (int torre = 1; torre < 4; torre++)
         {
             printf("Direita\n");
         }
     // Implementação de Movimentação da Rainha
-    printf("##Rainha##\n");
+    printf("\n##Rainha##\n");
     int rainha = 2;
     printf("Movimento inicial: %d\n", rainha);
     do
