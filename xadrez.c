@@ -26,7 +26,7 @@ int main() {
         {
             printf("Direita\n");
         }
-    // Implementação de Movimentação da Rainha
+    // Implementação de Movimentação da Rainha (para esquerda)
     printf("\n##Rainha##\n");
     int rainha = 2;
     printf("Movimento inicial: %d\n", rainha);
@@ -36,18 +36,29 @@ int main() {
         printf("Esquerda\n");
         } while (rainha <= 7);
 
-        // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Rainha para a esquerda.
+    // Nível Aventureiro - Movimentação do Cavalo
+    // Sugestão: Utilize loops aninhados para simular a movimentação do Cavalo em L.
+    // Um loop pode representar a movimentação horizontal e outro vertical.
+    //Implementando movimento Cavalo (2-cima e 1-direita).
+    printf("\n");
+    printf("##Cavalo##\n");
 
-        // Nível Aventureiro - Movimentação do Cavalo
-        // Sugestão: Utilize loops aninhados para simular a movimentação do Cavalo em L.
-        // Um loop pode representar a movimentação horizontal e outro vertical.
+    int cavalo = 1; // Cavalo = 1 pois no decremento ficará zero, para o for!
 
-        // Nível Mestre - Funções Recursivas e Loops Aninhados
-        // Sugestão: Substitua as movimentações das peças por funções recursivas.
-        // Exemplo: Crie uma função recursiva para o movimento do Bispo.
+    while (cavalo--)
+    {
+        for (int i = 0; i < 2; i++){
+            printf("Cima\n");
+        }
+        printf("Direita\n");
+    }
 
-        // Sugestão: Implemente a movimentação do Cavalo utilizando loops com variáveis múltiplas e condições avançadas.
-        // Inclua o uso de continue e break dentro dos loops.
+    // Nível Mestre - Funções Recursivas e Loops Aninhados
+    // Sugestão: Substitua as movimentações das peças por funções recursivas.
+    // Exemplo: Crie uma função recursiva para o movimento do Bispo.
 
-        return 0;
+    // Sugestão: Implemente a movimentação do Cavalo utilizando loops com variáveis múltiplas e condições avançadas.
+    // Inclua o uso de continue e break dentro dos loops.
+
+    return 0;
 }
