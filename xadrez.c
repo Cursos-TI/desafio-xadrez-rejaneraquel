@@ -1,45 +1,42 @@
 #include <stdio.h>
-/*
-Código de exemplo
-    for (int i = 0; i <5; i++) {
-    printf("Direita\n");     -> imprime a direção do movimento;
-    }
-*/
-int main() {
-    // Nível Novato - Movimentação das Peças
-    // Sugestão: Declare variáveis constantes para representar o número de casas que cada peça pode se mover.
-    int bispo = 1;
-    // Implementação de Movimentação do Bispo (Diagonal)
-
-    printf("##Bispo##\n");
-    while (bispo <= 3)
+void moverBispo(int casas) {
+    while (casas > 0)
     {
-        bispo++;
         printf("Cima\n");
         printf("Esquerda\n");
+        moverBispo(casas - 1);
+        break;
     }
+}
 
-    // Implementação de Movimentação da Torre (Direita)
-    printf("\n##Torre##\n");
-    // Simulando 4 casas;    
-        for (int torre = 1; torre < 4; torre++)
-        {
-            printf("Direita\n");
+void moverTorre(int casas) {
+    if (casas > 0) {
+        printf("Direita\n");
+        moverTorre(casas - 1);
         }
-    // Implementação de Movimentação da Rainha (para esquerda)
-    printf("\n##Rainha##\n");
-    int rainha = 2;
-    printf("Movimento inicial: %d\n", rainha);
-    do
-    {
-        rainha++; 
-        printf("Esquerda\n");
-        } while (rainha <= 7);
+}
 
-    // Nível Aventureiro - Movimentação do Cavalo
-    // Sugestão: Utilize loops aninhados para simular a movimentação do Cavalo em L.
-    // Um loop pode representar a movimentação horizontal e outro vertical.
-    //Implementando movimento Cavalo (2-cima e 1-direita).
+void moverRainha(int casas) {
+    if (casas > 0) {
+        printf("Esquerda\n");
+        moverRainha(casas - 1);
+    }
+}
+
+
+int main() {
+    
+    printf("##Bispo##\n");
+    moverBispo(3);
+
+    printf("\n");
+    printf("##Torre##\n");
+    moverTorre(3);
+
+    printf("\n");
+    printf("\n##Rainha##\n");
+    moverRainha(7);
+
     printf("\n");
     printf("##Cavalo##\n");
 
