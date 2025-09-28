@@ -1,11 +1,15 @@
 #include <stdio.h>
+
+//Externo cima - Interno Baixo
 void moverBispo(int casas) {
-    while (casas > 0)
+    if (casas > 0)
     {
-        printf("Cima\n");
-        printf("Esquerda\n");
+        for (int i = 0; i < 1; i++)
+        {
+            printf("Cima\n");
+        }
+        printf("Direita\n");
         moverBispo(casas - 1);
-        break;
     }
 }
 
@@ -23,39 +27,63 @@ void moverRainha(int casas) {
     }
 }
 
-
-int main() {
-    
-    printf("##Bispo##\n");
-    moverBispo(3);
-
-    printf("\n");
-    printf("##Torre##\n");
-    moverTorre(3);
-
-    printf("\n");
-    printf("\n##Rainha##\n");
-    moverRainha(7);
-
-    printf("\n");
-    printf("##Cavalo##\n");
-
-    int cavalo = 1; // Cavalo = 1 pois no decremento ficará zero, para o for!
-
-    while (cavalo--)
-    {
-        for (int i = 0; i < 2; i++){
+void moverCavalo(int casas) {
+    if(casas > 0) {
+        for (int i = 0; i < 2; i++)
+        {
             printf("Cima\n");
         }
         printf("Direita\n");
+        moverCavalo(casas - 1);
     }
+}
 
-    // Nível Mestre - Funções Recursivas e Loops Aninhados
-    // Sugestão: Substitua as movimentações das peças por funções recursivas.
-    // Exemplo: Crie uma função recursiva para o movimento do Bispo.
 
-    // Sugestão: Implemente a movimentação do Cavalo utilizando loops com variáveis múltiplas e condições avançadas.
-    // Inclua o uso de continue e break dentro dos loops.
+int main() {
+    int bispo, torre, rainha, cavalo, escolha;
 
+    printf("Seja Bem Vindo\n");
+    printf("Digite o número da peça que quer mover\n");
+    printf("1.Bispo\n");
+    printf("2.Torre\n");
+    printf("3.Rainha\n");
+    printf("4.Cavalo\n");
+    scanf("%d", &escolha);
+
+    switch (escolha)
+    {
+    case 1:
+        printf("##Bispo##\n");
+        printf("Digite quantas casas quer andar\n");
+        scanf("%d", &bispo);
+        moverBispo(bispo);
+        break;
+
+    case 2: 
+        printf("##Torre##\n");
+        printf("Digite quantas casas quer andar\n");
+        scanf("%d", &torre);
+        moverTorre(torre);
+        break;
+
+    case 3: 
+        printf("\n##Rainha##\n");
+        printf("Digite quantas casas quer andar\n");
+        scanf("%d", &rainha);
+        moverRainha(rainha);
+        break;
+
+    case 4:
+        printf("\n");
+        printf("##Cavalo##\n");
+        printf("Digite quantas casas quer andar\n");
+        scanf("%d", &cavalo);
+        moverCavalo(cavalo);
+        break;
+
+    default:
+        printf("Opção inválida\n");
+        break;
+    }
     return 0;
 }
